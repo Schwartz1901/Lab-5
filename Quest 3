@@ -1,0 +1,59 @@
+#include<iostream>
+#include<iomanip>
+#include<string.h>
+
+using namespace std;
+
+const int MAX = 100;
+
+struct student{
+    char name[20];
+    long int rollno;
+    char sex;
+    float height;
+    float weight;
+ 
+};
+
+int main(){
+    student cls[MAX];
+    int i,n;
+    cout << "How many names ? \n";
+    cin >> n;
+    float totalheight = 0;
+    float totalweight = 0;
+
+    for (i = 0; i <= n-1; ++i){
+        cout << "record = "<< i+1 << endl;
+        cout << "name : "; cin>> cls[i].name;
+        cout << "rollno : "; cin>> cls[i].rollno;
+        cout << "sex : "; cin>> cls[i].sex;
+        cout << "height : "; cin>> cls[i].height;
+        cout << "weight : "; cin>> cls[i].weight;
+        cout << endl;
+    }
+    cout << left << setw(20) << "Name";
+    cout << left << setw(20) << "Rollno";
+    cout << left << setw(20) << "Sex";
+    cout << left << setw(20) << "Height";
+    cout << "Weight" << endl;
+
+    for(i = 0; i < n; i++) {
+	
+    cout << left << setw(20) << cls[i].name;
+    cout << left << setw(20) << cls[i].rollno;
+    cout << left << setw(20) << cls[i].sex;
+    cout << setprecision(2) << fixed << left << setw(20) << cls[i].height;
+    cout << setprecision(2) << fixed << cls[i].weight << endl;
+
+}
+for (i = 0; i < n; i++) {
+	totalheight += cls[i].height;
+	totalweight += cls[i].weight;
+}
+cout << setprecision(5) << fixed;
+cout << totalheight / n << " ";
+cout <<totalweight / n << endl;
+return 0;
+
+}
