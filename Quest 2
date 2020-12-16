@@ -1,0 +1,26 @@
+#include<iostream>
+#include<iomanip>
+#include<stdlib.h>
+
+using namespace std;
+
+int main()
+{
+    double HR[] = {9.5, 6.4, 12.5, 5.5, 10.5};
+    double WH[5];
+    double W[5];
+    for (int i = 0; i < 5; i++) {
+    	cin >> WH[i];
+    	W[i] = HR[i] * WH[i];
+}
+	cout << left << setw(30) << "Hourly Rate";
+	cout << left << setw(30) << "Working Hour";
+	cout << "Wage" << endl;
+	for (int i = 0; i < 5 ; i++) {
+			cout << setprecision(10) << fixed;
+			cout << left << setw(30) << HR[i];
+			cout << left << setw(30) << WH[i];
+			cout << W[i] << endl;
+	}
+	return 0;
+}
