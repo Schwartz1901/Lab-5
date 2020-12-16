@@ -25,7 +25,7 @@ int main() {
 		i++;
 	}
 	
-	cout << fixed << setprecision(10)<< endl;
+	cout << fixed << setprecision(10);
 	cout << expo(i) << endl;
 	cout << expo(a) << endl;
 	return 0;
