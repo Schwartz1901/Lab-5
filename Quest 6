@@ -1,0 +1,33 @@
+#include<iostream>
+#include<iomanip>
+#include<stdlib.h>
+#include<math.h>
+using namespace std;
+
+float fact(int n) {
+	if(n == 0) return 1;
+	return n*fact(n-1);
+}
+float expo(int y)
+{
+	float sum = 1;
+	for (int i = 1; i <= y ; i++)
+		sum += 1 / fact(i);
+	return sum;
+}
+	
+int main() {
+	int i = 1;
+	int a;
+	cin >> a;
+	while(1/fact(i) >= pow(10,-6))
+	{
+		i++;
+	}
+	
+	cout << fixed << setprecision(10)<< endl;
+	cout << expo(i) << endl;
+	cout << expo(a) << endl;
+	return 0;
+	
+}
